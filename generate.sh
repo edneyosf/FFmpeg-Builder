@@ -31,22 +31,23 @@ cd ffmpeg
 PKG_CONFIG_PATH="$BUILD_DIR/lib/pkgconfig" ./configure \
   --extra-version="$VERSION-$NOW" \
   --prefix=$BUILD_DIR \
-  --pkg-config-flags="--static" \
-  --extra-cflags="-I$BUILD_DIR/include" \
-  --extra-ldflags="-L$BUILD_DIR/lib" \
-  --extra-libs="-lpthread" \
-  --ld="g++" \
   --bindir="$BUILD_DIR/bin" \
+  --pkg-config-flags="--static" \
+  --extra-cflags="-static-libgcc -static-libstdc++ -I$BUILD_DIR/include -O2 -pipe -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fstack-clash-protection -pthread" \
+  --extra-cxxflags="-static-libgcc -static-libstdc++ -I$BUILD_DIR/include -O2 -pipe -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fstack-clash-protection -pthread" \
+  --extra-ldflags="-L$BUILD_DIR/lib -Wl,-z,relro,-z,now -static-libgcc -static-libstdc++ -pthread" \
+  --extra-libs="-lm -lpthread -lz" \
+  --ld="g++" \
   --enable-gpl \
   --enable-nonfree \
   --enable-version3 \
+  --enable-libvmaf \
   --enable-libfdk-aac \
   --enable-libopus \
   --enable-libx264 \
   --enable-libsvtav1 \
   --enable-libaom \
   --enable-libdav1d \
-  --enable-libvmaf \
   --enable-libwebp \
   --enable-libfreetype \
   --enable-libass \

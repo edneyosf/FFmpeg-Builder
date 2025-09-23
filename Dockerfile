@@ -27,6 +27,7 @@ RUN apt -y install \
     pkg-config \
     yasm \
     wget \
+    xxd \
     nasm \
     doxygen \
     zlib1g-dev \
