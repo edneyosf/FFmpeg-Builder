@@ -33,6 +33,7 @@ RUN apt -y install \
     zlib1g-dev \
     libfreetype6-dev \
     libass-dev \
+    libzimg-dev \
     libdav1d-dev && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*

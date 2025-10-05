@@ -51,6 +51,7 @@ PKG_CONFIG_PATH="$BUILD_DIR/lib/pkgconfig" ./configure \
   --enable-libwebp \
   --enable-libfreetype \
   --enable-libass \
+  --enable-libzimg \
   --enable-static \
   --disable-shared \
   --disable-doc
