@@ -52,6 +52,7 @@ PKG_CONFIG_PATH="$BUILD_DIR/lib/pkgconfig" ./configure \
   --enable-libfreetype \
   --enable-libass \
   --enable-libzimg \
+  --enable-vaapi \
   --enable-static \
   --disable-shared \
   --disable-doc
